@@ -1,2 +1,3 @@
 *.class
 profiling-output-root/*
+Analyzers/JMH/jmh-code-analyzer/target
