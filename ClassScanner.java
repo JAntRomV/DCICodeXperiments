@@ -6,7 +6,7 @@ import java.util.jar.*;
 
 public class ClassScanner {
 
-    private static final String TARGET_PACKAGE = "Code.Java.Abacus.v1.Rare";
+    private static final String TARGET_PACKAGE = "Code.Java.Abacus.v1.Refactored";
     private static final String OUTPUT_FILE    = "classes_to_profile.txt";
 
     public static void main(String[] args) throws Exception {
