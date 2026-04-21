@@ -5,7 +5,7 @@ import java.util.*;
 
 public class JFRParser {
 
-    static final String OUTPUT_DIR = "profiling-output";
+    static final String OUTPUT_DIR = "profiling-output-root";
     static final String CSV_FILE   = "profiling_results.csv";
 
     public static void main(String[] args) throws Exception {
