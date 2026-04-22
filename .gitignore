@@ -1,0 +1,6 @@
+*.class
+*.jar
+
+profiling-output-root/*
+Analyzers/JMH/jmh-code-analyzer/target
+Analyzers/Profiler/build
