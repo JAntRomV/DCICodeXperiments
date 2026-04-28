@@ -9,12 +9,12 @@
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
-PROFILER_DIR="${ROOT_DIR}/Analyzers/Profiler"
+PROFILER_DIR="${ROOT_DIR}/Profiler/v2-deep"
 AGENT_SRC="${PROFILER_DIR}/ProfilingAgent.java"
 AGENT_JAR="${PROFILER_DIR}/ProfilingAgent.jar"
 BUILD_DIR="${PROFILER_DIR}/build/agent"
 MANIFEST="${PROFILER_DIR}/agent_manifest.txt"
-JAVA_PACKAGE="Code.Java.Abacus.v1.Refactored"
+JAVA_PACKAGE="Code.Java.Abacus.v1.Rare"
 
 RED='\033[0;31m'; GREEN='\033[0;32m'; CYAN='\033[0;36m'; NC='\033[0m'
 log() { echo -e "${CYAN}[SETUP]${NC} $*"; }

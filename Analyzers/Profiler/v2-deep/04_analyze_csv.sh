@@ -8,8 +8,8 @@
 
 set -euo pipefail
 
-ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
-PROFILER_DIR="${ROOT_DIR}/Analyzers/Profiler"
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
+PROFILER_DIR="${ROOT_DIR}/Analyzers/Profiler/v2-deep"
 CSV_FILE="${PROFILER_DIR}/profiling_results.csv"
 STATS_CSV="${PROFILER_DIR}/profiling_stats_summary.csv"
 

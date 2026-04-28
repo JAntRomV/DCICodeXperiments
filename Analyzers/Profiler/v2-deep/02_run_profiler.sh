@@ -9,15 +9,16 @@ set -euo pipefail
 # ---------------------------------------------------------------------------
 # Rutas
 # ---------------------------------------------------------------------------
-ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"   # DTSCode4Traning/
-PROFILER_DIR="${ROOT_DIR}/Analyzers/Profiler"
-SRC_PACKAGE_PATH="Code/Java/Abacus/v1/Refactored"                       # ruta relativa dentro de ROOT_DIR
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"   # DTSCode4Traning/
+PROFILER_DIR="${ROOT_DIR}/Analyzers/Profiler/v2-deep"
+SRC_PACKAGE_PATH="Code/Java/Abacus/v1/Rare"                       # ruta relativa dentro de ROOT_DIR
 SRC_DIR="${ROOT_DIR}/${SRC_PACKAGE_PATH}"
-JAVA_PACKAGE="Code.Java.Abacus.v1.Refactored"
+JAVA_PACKAGE="Code.Java.Abacus.v1.Rare"
 BUILD_DIR="${PROFILER_DIR}/build"
 AGENT_JAR="${PROFILER_DIR}/ProfilingAgent.jar"
 CSV_FILE="${PROFILER_DIR}/profiling_results.csv"
-RUNS=100
+# RUNS=100
+RUNS=1000
 
 # ---------------------------------------------------------------------------
 # Colores para output
@@ -102,7 +103,7 @@ else
 fi
 
 # ---------------------------------------------------------------------------
-# 3. Compilar las clases del paquete Refactored
+# 3. Compilar las clases del paquete Rare
 # ---------------------------------------------------------------------------
 log "Compilando clases del paquete ${JAVA_PACKAGE}..."
 mkdir -p "${BUILD_DIR}/classes"

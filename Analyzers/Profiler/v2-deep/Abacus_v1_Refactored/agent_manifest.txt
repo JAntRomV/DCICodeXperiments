@@ -1,4 +1,0 @@
-Premain-Class: Code.Java.Abacus.v1.Refactored.ProfilingAgent
-Agent-Class: Code.Java.Abacus.v1.Refactored.ProfilingAgent
-Can-Redefine-Classes: true
-Can-Retransform-Classes: true
