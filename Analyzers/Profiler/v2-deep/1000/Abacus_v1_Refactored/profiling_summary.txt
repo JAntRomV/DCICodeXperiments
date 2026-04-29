@@ -1,0 +1,602 @@
+============================================================
+  RESUMEN DE PROFILING — mar 28 abr 2026 20:58:13 CST
+  Paquete : Code.Java.Abacus.v1.Refactored
+  Clases  : 100
+  Runs    : 1000 por clase
+  CSV     : /home/jarv-mini/jantromv/DCICodeXperiments/Analyzers/Profiler/v2-deep/profiling_results.csv
+============================================================
+
+── AreaCuadrado ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 26.27
+  Mínimo (ms)         : 23.00
+  Máximo (ms)         : 38.00
+
+── AreaEsfera ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 26.42
+  Mínimo (ms)         : 23.00
+  Máximo (ms)         : 37.00
+
+── AreaRectangulo ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 23.15
+  Mínimo (ms)         : 20.00
+  Máximo (ms)         : 31.00
+
+── AreaTriangulo ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 23.20
+  Mínimo (ms)         : 20.00
+  Máximo (ms)         : 32.00
+
+── BuscarElemento ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 25.16
+  Mínimo (ms)         : 22.00
+  Máximo (ms)         : 36.00
+
+── CaidaLibre ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 23.71
+  Mínimo (ms)         : 20.00
+  Máximo (ms)         : 34.00
+
+── CalculoDescuento ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 23.41
+  Mínimo (ms)         : 21.00
+  Máximo (ms)         : 36.00
+
+── CalculoEdad ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 26.76
+  Mínimo (ms)         : 23.00
+  Máximo (ms)         : 42.00
+
+── CalculoIMC ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 23.33
+  Mínimo (ms)         : 20.00
+  Máximo (ms)         : 32.00
+
+── CalculoIVA ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 27.06
+  Mínimo (ms)         : 24.00
+  Máximo (ms)         : 41.00
+
+── CalculoPropina ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 23.34
+  Mínimo (ms)         : 20.00
+  Máximo (ms)         : 37.00
+
+── CalculoSalario ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 26.86
+  Mínimo (ms)         : 24.00
+  Máximo (ms)         : 42.00
+
+── CalculosCirculo ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 23.55
+  Mínimo (ms)         : 20.00
+  Máximo (ms)         : 33.00
+
+── CalculoVelocidad ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 23.65
+  Mínimo (ms)         : 21.00
+  Máximo (ms)         : 37.00
+
+── CoeficienteVariacion ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 26.89
+  Mínimo (ms)         : 24.00
+  Máximo (ms)         : 38.00
+
+── ContarImpares ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 23.51
+  Mínimo (ms)         : 20.00
+  Máximo (ms)         : 37.00
+
+── ContarPares ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 23.55
+  Mínimo (ms)         : 21.00
+  Máximo (ms)         : 34.00
+
+── ConversionBinario ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 26.43
+  Mínimo (ms)         : 23.00
+  Máximo (ms)         : 36.00
+
+── ConversionCelsiusFahrenheit ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 22.05
+  Mínimo (ms)         : 20.00
+  Máximo (ms)         : 32.00
+
+── ConversionFahrenheitCelsius ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 22.07
+  Mínimo (ms)         : 20.00
+  Máximo (ms)         : 29.00
+
+── ConversionHexadecimal ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 26.48
+  Mínimo (ms)         : 24.00
+  Máximo (ms)         : 38.00
+
+── ConversionKgLibras ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 22.10
+  Mínimo (ms)         : 20.00
+  Máximo (ms)         : 33.00
+
+── ConversionKmMillas ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 22.09
+  Mínimo (ms)         : 20.00
+  Máximo (ms)         : 31.00
+
+── ConversionMetrosPies ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 22.13
+  Mínimo (ms)         : 20.00
+  Máximo (ms)         : 32.00
+
+── ConversionOctal ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 26.53
+  Mínimo (ms)         : 23.00
+  Máximo (ms)         : 35.00
+
+── Cuartiles ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 27.28
+  Mínimo (ms)         : 24.00
+  Máximo (ms)         : 36.00
+
+── Densidad ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 23.73
+  Mínimo (ms)         : 21.00
+  Máximo (ms)         : 33.00
+
+── DesviacionEstandar ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 23.46
+  Mínimo (ms)         : 21.00
+  Máximo (ms)         : 37.00
+
+── DiagonalMatriz ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 20.15
+  Mínimo (ms)         : 18.00
+  Máximo (ms)         : 26.00
+
+── DiasAAnios ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 26.70
+  Mínimo (ms)         : 24.00
+  Máximo (ms)         : 41.00
+
+── DistanciaEuclidiana ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 26.98
+  Mínimo (ms)         : 24.00
+  Máximo (ms)         : 38.00
+
+── DivisionNumeros ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 26.78
+  Mínimo (ms)         : 24.00
+  Máximo (ms)         : 43.00
+
+── EnergiaKinetica ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 23.68
+  Mínimo (ms)         : 21.00
+  Máximo (ms)         : 31.00
+
+── EnergiaPotencial ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 23.69
+  Mínimo (ms)         : 21.00
+  Máximo (ms)         : 36.00
+
+── FactorialNumero ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 26.56
+  Mínimo (ms)         : 24.00
+  Máximo (ms)         : 40.00
+
+── Fuerza ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 23.66
+  Mínimo (ms)         : 21.00
+  Máximo (ms)         : 32.00
+
+── FuncionCoseno ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 26.86
+  Mínimo (ms)         : 24.00
+  Máximo (ms)         : 38.00
+
+── FuncionSeno ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 26.82
+  Mínimo (ms)         : 24.00
+  Máximo (ms)         : 37.00
+
+── FuncionTangente ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 26.88
+  Mínimo (ms)         : 24.00
+  Máximo (ms)         : 41.00
+
+── Hipotenusa ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 26.82
+  Mínimo (ms)         : 24.00
+  Máximo (ms)         : 44.00
+
+── InteresCompuesto ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 23.42
+  Mínimo (ms)         : 21.00
+  Máximo (ms)         : 38.00
+
+── InteresSimple ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 23.36
+  Mínimo (ms)         : 21.00
+  Máximo (ms)         : 35.00
+
+── InvertirArray ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 20.13
+  Mínimo (ms)         : 18.00
+  Máximo (ms)         : 28.00
+
+── InvertirNumero ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 23.46
+  Mínimo (ms)         : 21.00
+  Máximo (ms)         : 33.00
+
+── LeyOhm ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 23.73
+  Mínimo (ms)         : 21.00
+  Máximo (ms)         : 32.00
+
+── MaximoArray ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 23.53
+  Mínimo (ms)         : 21.00
+  Máximo (ms)         : 31.00
+
+── MCDEuclides ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 26.57
+  Mínimo (ms)         : 24.00
+  Máximo (ms)         : 38.00
+
+── MCM ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 26.59
+  Mínimo (ms)         : 24.00
+  Máximo (ms)         : 36.00
+
+── MediaArmonica ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 26.77
+  Mínimo (ms)         : 23.00
+  Máximo (ms)         : 37.00
+
+── MediaGeometrica ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 26.81
+  Mínimo (ms)         : 24.00
+  Máximo (ms)         : 40.00
+
+── Mediana ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 23.61
+  Mínimo (ms)         : 21.00
+  Máximo (ms)         : 35.00
+
+── MediaPonderada ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 26.78
+  Mínimo (ms)         : 24.00
+  Máximo (ms)         : 40.00
+
+── MinimoArray ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 23.44
+  Mínimo (ms)         : 21.00
+  Máximo (ms)         : 35.00
+
+── Moda ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 23.48
+  Mínimo (ms)         : 21.00
+  Máximo (ms)         : 33.00
+
+── MultiplicacionNumeros ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 26.53
+  Mínimo (ms)         : 23.00
+  Máximo (ms)         : 35.00
+
+── MultiplicarArray ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 20.20
+  Mínimo (ms)         : 18.00
+  Máximo (ms)         : 30.00
+
+── NumeroAleatorio ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 27.37
+  Mínimo (ms)         : 23.00
+  Máximo (ms)         : 49.00
+
+── NumeroArmstrong ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 26.47
+  Mínimo (ms)         : 24.00
+  Máximo (ms)         : 37.00
+
+── NumeroMayor ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 23.37
+  Mínimo (ms)         : 21.00
+  Máximo (ms)         : 32.00
+
+── NumeroMenor ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 23.41
+  Mínimo (ms)         : 21.00
+  Máximo (ms)         : 31.00
+
+── NumeroPalindromo ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 26.47
+  Mínimo (ms)         : 24.00
+  Máximo (ms)         : 36.00
+
+── NumeroParImpar ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 23.72
+  Mínimo (ms)         : 21.00
+  Máximo (ms)         : 39.00
+
+── NumeroPerfecto ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 25.19
+  Mínimo (ms)         : 22.00
+  Máximo (ms)         : 35.00
+
+── NumeroPositivoNegativo ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 23.71
+  Mínimo (ms)         : 21.00
+  Máximo (ms)         : 34.00
+
+── NumeroPrimo ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 25.32
+  Mínimo (ms)         : 22.00
+  Máximo (ms)         : 37.00
+
+── NumerosPrimos ──
+  Sin datos de ejecución
+
+── OrdenarArray ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 20.41
+  Mínimo (ms)         : 18.00
+  Máximo (ms)         : 30.00
+
+── PendienteRecta ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 27.00
+  Mínimo (ms)         : 24.00
+  Máximo (ms)         : 38.00
+
+── Percentil ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 27.12
+  Mínimo (ms)         : 24.00
+  Máximo (ms)         : 37.00
+
+── PerimetroCuadrado ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 26.75
+  Mínimo (ms)         : 24.00
+  Máximo (ms)         : 37.00
+
+── PerimetroRectangulo ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 23.37
+  Mínimo (ms)         : 21.00
+  Máximo (ms)         : 35.00
+
+── Porcentaje ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 25.89
+  Mínimo (ms)         : 23.00
+  Máximo (ms)         : 37.00
+
+── Potencia ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 23.70
+  Mínimo (ms)         : 21.00
+  Máximo (ms)         : 33.00
+
+── PotenciaRaiz ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 28.44
+  Mínimo (ms)         : 25.00
+  Máximo (ms)         : 39.00
+
+── Presion ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 23.72
+  Mínimo (ms)         : 21.00
+  Máximo (ms)         : 32.00
+
+── PromedioArray ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 26.80
+  Mínimo (ms)         : 24.00
+  Máximo (ms)         : 38.00
+
+── PromedioNumeros ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 23.36
+  Mínimo (ms)         : 21.00
+  Máximo (ms)         : 39.00
+
+── PuntoMedio ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 27.26
+  Mínimo (ms)         : 24.00
+  Máximo (ms)         : 39.00
+
+── RangoEstadistico ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 26.80
+  Mínimo (ms)         : 24.00
+  Máximo (ms)         : 37.00
+
+── RedondeoNumero ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 28.59
+  Mínimo (ms)         : 26.00
+  Máximo (ms)         : 43.00
+
+── RestaNumeros ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 26.87
+  Mínimo (ms)         : 24.00
+  Máximo (ms)         : 38.00
+
+── SegundosAHoras ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 26.66
+  Mínimo (ms)         : 24.00
+  Máximo (ms)         : 38.00
+
+── SerieFibonacci ──
+  Sin datos de ejecución
+
+── SumaArray ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 23.44
+  Mínimo (ms)         : 21.00
+  Máximo (ms)         : 30.00
+
+── SumaDigitos ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 23.50
+  Mínimo (ms)         : 21.00
+  Máximo (ms)         : 32.00
+
+── SumaImpares ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 25.10
+  Mínimo (ms)         : 22.00
+  Máximo (ms)         : 34.00
+
+── SumaMatrices ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 23.89
+  Mínimo (ms)         : 21.00
+  Máximo (ms)         : 32.00
+
+── SumaNumeros ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 26.57
+  Mínimo (ms)         : 23.00
+  Máximo (ms)         : 37.00
+
+── SumaPares ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 25.13
+  Mínimo (ms)         : 22.00
+  Máximo (ms)         : 35.00
+
+── SumaPrimeroN ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 25.06
+  Mínimo (ms)         : 22.00
+  Máximo (ms)         : 36.00
+
+── TablasMultiplicar ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 30.16
+  Mínimo (ms)         : 27.00
+  Máximo (ms)         : 43.00
+
+── Trabajo ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 23.72
+  Mínimo (ms)         : 21.00
+  Máximo (ms)         : 36.00
+
+── TransponerMatriz ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 23.97
+  Mínimo (ms)         : 22.00
+  Máximo (ms)         : 34.00
+
+── ValorAbsoluto ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 25.09
+  Mínimo (ms)         : 22.00
+  Máximo (ms)         : 41.00
+
+── Varianza ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 26.77
+  Mínimo (ms)         : 24.00
+  Máximo (ms)         : 39.00
+
+── VelocidadFinal ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 23.66
+  Mínimo (ms)         : 21.00
+  Máximo (ms)         : 33.00
+
+── VolumenCilindro ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 26.72
+  Mínimo (ms)         : 23.00
+  Máximo (ms)         : 38.00
+
+── VolumenCono ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 26.74
+  Mínimo (ms)         : 24.00
+  Máximo (ms)         : 37.00
+
+── VolumenCubo ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 23.37
+  Mínimo (ms)         : 21.00
+  Máximo (ms)         : 34.00
+
+── VolumenEsfera ──
+  Ejecuciones válidas : 1000
+  Tiempo promedio (ms): 26.79
+  Mínimo (ms)         : 24.00
+  Máximo (ms)         : 38.00
+

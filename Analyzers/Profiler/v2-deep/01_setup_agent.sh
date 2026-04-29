@@ -14,7 +14,7 @@ AGENT_SRC="${PROFILER_DIR}/ProfilingAgent.java"
 AGENT_JAR="${PROFILER_DIR}/ProfilingAgent.jar"
 BUILD_DIR="${PROFILER_DIR}/build/agent"
 MANIFEST="${PROFILER_DIR}/agent_manifest.txt"
-JAVA_PACKAGE="Code.Java.Abacus.v1.Rare"
+JAVA_PACKAGE="Code.Java.Abacus.v1.Refactored"
 
 RED='\033[0;31m'; GREEN='\033[0;32m'; CYAN='\033[0;36m'; NC='\033[0m'
 log() { echo -e "${CYAN}[SETUP]${NC} $*"; }
