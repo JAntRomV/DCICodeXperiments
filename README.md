@@ -73,7 +73,7 @@ $ mvn archetype:generate \
   -Dversion=1.0
 
 Build project
-$ cd test/
+$ cd jmh-code-analyzer/
 $ mvn clean verify
 
 Run JMH benchmark

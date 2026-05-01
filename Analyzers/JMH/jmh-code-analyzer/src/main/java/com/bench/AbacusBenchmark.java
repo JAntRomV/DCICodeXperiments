@@ -8,13 +8,12 @@ import org.openjdk.jmh.runner.options.Options;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
 import java.util.concurrent.TimeUnit;
 
-//@BenchmarkMode(Mode.AverageTime) // O SampleTime para ver latencias
-@BenchmarkMode(Mode.All) 
-@OutputTimeUnit(TimeUnit.MILLISECONDS)
+@BenchmarkMode(Mode.All)
+@OutputTimeUnit(TimeUnit.NANOSECONDS)
 @State(Scope.Thread)
-@Fork(value = 1)
-@Warmup(iterations = 5)
-@Measurement(iterations = 100) // Ejecutar 100 veces cada una
+@Fork(value = 3)                          // 3 JVMs distintas = menos sesgo
+@Warmup(iterations = 15, time = 500, timeUnit = TimeUnit.MILLISECONDS)
+@Measurement(iterations = 334, time = 500, timeUnit = TimeUnit.MILLISECONDS)
 public class AbacusBenchmark {
 
     @Param({""}) // Se llenará dinámicamente si es necesario, o vía iteración manual
