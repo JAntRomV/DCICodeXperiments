@@ -2,10 +2,10 @@
 set -euo pipefail
 
 # ─── Configuración ───────────────────────────────────────────────
-PACKAGE="Code.Java.Abacus.v1.Refactored"
+PACKAGE="Code.Java.Abacus.v1.Rare"
 CLASSPATH="."                          # Ajusta si tienes un JAR: "./miapp.jar"
-RUNS=100
-CSV="Analyzers/Time-Ram/results/resultados_benchmark_Refactored.csv"
+RUNS=1000
+CSV="Analyzers/Time-Ram/Abacus_v1/1000/resultados_benchmark_Rare.csv"
 PACKAGE_DIR=$(echo "$PACKAGE" | tr '.' '/')
 # ─────────────────────────────────────────────────────────────────
 
