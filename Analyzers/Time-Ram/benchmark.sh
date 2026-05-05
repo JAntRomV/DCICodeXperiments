@@ -2,11 +2,11 @@
 set -euo pipefail
 
 # ─── Configuración ───────────────────────────────────────────────
-PACKAGE="Code.Java.Abacus.v1.Rare"
+PACKAGE="Code.Java.Abacus.v1.Refactored"
 CLASSPATH="."                          # Ajusta si tienes un JAR: "./miapp.jar"
 # RUNS=100
 RUNS=1000
-CSV="Analyzers/Time-Ram/Abacus_v1/1000/resultados_benchmark_Rare.csv"
+CSV="Analyzers/Time-Ram/Abacus_v1/1000/resultados_benchmark_Refactored.csv"
 PACKAGE_DIR=$(echo "$PACKAGE" | tr '.' '/')
 # ─────────────────────────────────────────────────────────────────
 
@@ -66,7 +66,7 @@ for CLASE in "${CLASES[@]}"; do
 
   done
 
-  echo "   ✓ 100 runs completados"
+  echo "   ✓ 1000 runs completados"
 done
 
 echo ""
