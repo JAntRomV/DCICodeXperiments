@@ -5,4 +5,6 @@ target
 profiling-output-root/*
 Analyzers/JMH/jmh-code-analyzer/target
 Analyzers/Profiler/build
+Analyzers/JMH/jmh-code-analyzer/src/main/java/Code
+ck
 

@@ -64,6 +64,7 @@ java -jar ck-0.7.1-SNAPSHOT-jar-with-dependencies.jar \
 ## JMH (Java Microbenchmark Harness)
 
 Create jmh test project
+```
 $ mvn archetype:generate \
   -DinteractiveMode=false \
   -DarchetypeGroupId=org.openjdk.jmh \
@@ -71,13 +72,49 @@ $ mvn archetype:generate \
   -DgroupId=org.sample \
   -DartifactId=jmh-code-analyzer \
   -Dversion=1.0
+```
 
 Build project
-$ cd test/
+```
+$ cd jmh-code-analyzer/
 $ mvn clean verify
+```
 
 Run JMH benchmark
+```
 $ java -jar target/benchmarks.jar
+```
 
 Save results JMH in CSV
-  java -jar target/benchmarks.jar -rf csv -rff results.csv
+```
+java -jar target/benchmarks.jar
+```
+
+Optional
+```
+java -jar target/benchmarks.jar -rf csv -rff results.csv
+```
+
+## Profiling
+
+### Light version
+Change dirs between "Rare" and "Refactored". Then:
+
+```
+$ javac Analyzers/Profiler/v1_light/Agents/*.java
+$ java Analyzers.Profiler.v1_light.Agents.ClassScanner
+$ chmod +x Analyzers/Profiler/v1_light/Agents/01_run_profiling.sh #Optional, only the first time
+$ ./Analyzers/Profiler/v1_light/Agents/01_run_profiling.sh
+$ java Analyzers.Profiler.v1_light.Agents.JFRParser
+```
+
+### Deep version
+Change dirs between "Rare" and "Refactored". Then:
+
+```
+$ javac Analyzers/Profiler/v2_deep/*.java
+$ chmod +x Analyzers/Profiler/v2_deep/*.sh
+$ ./Analyzers/Profiler/v2_deep/01_setup_agent.sh
+$ ./Analyzers/Profiler/v2_deep/02_run_profiler.sh
+$ ./Analyzers/Profiler/v2_deep/04_analyze_csv.sh
+```
