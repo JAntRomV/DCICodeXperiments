@@ -104,7 +104,8 @@ THE POSSIBILITY OF SUCH DAMAGE.
                             <finalName>${uberjar.name}</finalName>
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>org.openjdk.jmh.Main</mainClass>
+                                    <!-- <mainClass>org.openjdk.jmh.Main</mainClass> -->
+                                    <mainClass>com.dci.MainLauncher</mainClass>
                                 </transformer>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
                             </transformers>

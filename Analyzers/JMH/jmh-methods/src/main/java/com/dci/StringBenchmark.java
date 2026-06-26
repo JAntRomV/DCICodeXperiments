@@ -1,4 +1,4 @@
-package com.example;
+package com.dci;
 
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;
