@@ -42,12 +42,12 @@ import java.util.concurrent.TimeUnit;
 @BenchmarkMode(Mode.All)
 @OutputTimeUnit(TimeUnit.NANOSECONDS)
 @Warmup(iterations = 3, time = 1, timeUnit = TimeUnit.SECONDS)
-@Measurement(iterations = 3, time = 1, timeUnit = TimeUnit.SECONDS)
+@Measurement(iterations = 3, time = 1, timeUnit = TimeUnit.NANOSECONDS)
 @Fork(1)
 @State(Scope.Thread)
 public class MyBenchmark {
     @Benchmark
-    public void testMethod(Blackhole bh) {
+    public void printString(Blackhole bh) {
         String str = "Hello, World!";
         System.out.println(str);
         bh.consume(str);

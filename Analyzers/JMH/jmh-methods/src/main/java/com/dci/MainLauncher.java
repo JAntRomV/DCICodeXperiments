@@ -12,8 +12,11 @@ import java.util.HashSet;
 public class MainLauncher {
     public static void main(String[] args) throws Exception {
         Options opt = new OptionsBuilder()
-                .include(StringBenchmark.class.getSimpleName())
+                .include(MyBenchmark.class.getSimpleName())
                 .addProfiler(GCProfiler.class)
+                .jvmArgs("-Xmx4g", "-Xms4g")
+                .resultFormat(ResultFormatType.CSV)
+                .result("100/results2.csv") 
                 .build();
 
         new Runner(opt).run();
