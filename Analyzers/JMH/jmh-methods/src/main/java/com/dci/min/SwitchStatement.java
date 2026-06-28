@@ -2,7 +2,11 @@ package com.dci.min;
 
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.infra.Blackhole;
+import org.openjdk.jmh.annotations.Scope;
+import org.openjdk.jmh.annotations.State;
+import org.openjdk.jmh.annotations.Param;
 
+@State(Scope.Benchmark)
 public class SwitchStatement {
 
     @Param({"1","2","0"})

@@ -52,7 +52,7 @@ public class MainLauncher {
                 .measurementIterations(100)
                 .forks(1)
                 .threads(1)
-                .mode(org.openjdk.jmh.annotations.Mode.ALL)
+                .mode(org.openjdk.jmh.annotations.Mode.All)
                 .timeUnit(java.util.concurrent.TimeUnit.NANOSECONDS)
                 .build();
 
