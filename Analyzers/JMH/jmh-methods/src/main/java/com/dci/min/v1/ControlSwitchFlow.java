@@ -1,4 +1,4 @@
-package com.dci.min;
+package com.dci.min.v1;
 
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.Param;
@@ -7,7 +7,7 @@ import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.State;
 
 @State(Scope.Benchmark)
-public class ControlIfElseFlow {
+public class ControlSwitchFlow {
 
     @Param({"0", "1", "3", "5", "10"})
     public int N;
@@ -17,11 +17,20 @@ public class ControlIfElseFlow {
     @Benchmark
     public void exec(Blackhole bh) {
         
-        // if-else
-        if (N % 2 == 0) {
-            _TOTAL += 2;
-        } else {
-            _TOTAL += 3;
+        // switch statement
+        switch (N % 4) {
+            case 0:
+                _TOTAL += 10;
+                break;
+            case 1:
+                _TOTAL += 20;
+                break;
+            case 2:
+                _TOTAL += 30;
+                break;
+            default:
+                _TOTAL += 40;
+                break;
         }
 
         bh.consume(_TOTAL);

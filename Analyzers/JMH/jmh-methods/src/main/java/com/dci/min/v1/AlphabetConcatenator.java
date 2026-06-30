@@ -1,4 +1,4 @@
-package com.dci.min;
+package com.dci.min.v1;
 
 public class AlphabetConcatenator {
 

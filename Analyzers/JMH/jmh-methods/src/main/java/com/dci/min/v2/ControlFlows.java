@@ -1,4 +1,4 @@
-package com.dci.min;
+package com.dci.min.v2;
 
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.infra.Blackhole;
