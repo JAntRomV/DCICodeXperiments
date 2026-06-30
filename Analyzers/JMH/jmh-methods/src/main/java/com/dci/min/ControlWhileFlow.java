@@ -12,16 +12,18 @@ public class ControlWhileFlow {
     @Param({"0", "1", "3", "5", "10"})
     public int N;
 
+    private int _TOTAL = 0;
+
     @Benchmark
     public void exec(Blackhole bh) {
-        int total = 0;
-
+        
+        // while loop
         int j = 0;
         while (j < N) {
-            total += j * 2;
+            _TOTAL += j * 2;
             j++;
         }
 
-        bh.consume(total);
+        bh.consume(_TOTAL);
     }
 }

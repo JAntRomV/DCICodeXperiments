@@ -12,25 +12,27 @@ public class ControlSwitchFlow {
     @Param({"0", "1", "3", "5", "10"})
     public int N;
 
+    private int _TOTAL = 0;
+
     @Benchmark
     public void exec(Blackhole bh) {
-        int total = 0;
-
+        
+        // switch statement
         switch (N % 4) {
             case 0:
-                total += 10;
+                _TOTAL += 10;
                 break;
             case 1:
-                total += 20;
+                _TOTAL += 20;
                 break;
             case 2:
-                total += 30;
+                _TOTAL += 30;
                 break;
             default:
-                total += 40;
+                _TOTAL += 40;
                 break;
         }
 
-        bh.consume(total);
+        bh.consume(_TOTAL);
     }
 }

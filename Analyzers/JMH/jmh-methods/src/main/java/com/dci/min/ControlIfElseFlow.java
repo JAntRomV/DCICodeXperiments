@@ -12,16 +12,18 @@ public class ControlIfElseFlow {
     @Param({"0", "1", "3", "5", "10"})
     public int N;
 
+    private int _TOTAL = 0;
+
     @Benchmark
     public void exec(Blackhole bh) {
-        int total = 0;
-
+        
+        // if-else
         if (N % 2 == 0) {
-            total += 2;
+            _TOTAL += 2;
         } else {
-            total += 3;
+            _TOTAL += 3;
         }
 
-        bh.consume(total);
+        bh.consume(_TOTAL);
     }
 }

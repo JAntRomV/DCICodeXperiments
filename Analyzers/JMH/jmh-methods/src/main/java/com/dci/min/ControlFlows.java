@@ -5,6 +5,7 @@ import org.openjdk.jmh.infra.Blackhole;
 import org.openjdk.jmh.annotations.Param;
 import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.State;
+import org.openjdk.jmh.annotations.Setup;
 
 @State(Scope.Benchmark)
 public class ControlFlows {
@@ -12,31 +13,41 @@ public class ControlFlows {
     @Param({"0", "1", "3", "5", "10"})
     public int N;
 
+    private int[] _VALUES;
+    private int _TOTAL = 0;
+
+    @Setup
+    public void setupValues() {
+        _VALUES = new int[N];
+        for (int i = 0; i < N; i++) {
+            _VALUES[i] = i + 1;
+        }
+    }
+
     @Benchmark
     public void exec(Blackhole bh) {
-        int total = 0;
 
         // if simple
         if (N == 0) {
-            total += 1;
+            _TOTAL += 1;
         }
 
         // if-else
         if (N % 2 == 0) {
-            total += 2;
+            _TOTAL += 2;
         } else {
-            total += 3;
+            _TOTAL += 3;
         }
 
         // for loop
         for (int i = 0; i < N; i++) {
-            total += i;
+            _TOTAL += i;
         }
 
         // while loop
         int j = 0;
         while (j < N) {
-            total += j * 2;
+            _TOTAL += j * 2;
             j++;
         }
 
@@ -44,36 +55,32 @@ public class ControlFlows {
         int k = 0;
         if (N > 0) {
             do {
-                total += k * 3;
+                _TOTAL += k * 3;
                 k++;
             } while (k < N);
         }
 
         // foreach loop
-        int[] values = new int[N];
-        for (int i = 0; i < N; i++) {
-            values[i] = i + 1;
-        }
-        for (int value : values) {
-            total += value;
+        for (int value : _VALUES) {
+            _TOTAL += value;
         }
 
         // switch statement
         switch (N % 4) {
             case 0:
-                total += 10;
+                _TOTAL += 10;
                 break;
             case 1:
-                total += 20;
+                _TOTAL += 20;
                 break;
             case 2:
-                total += 30;
+                _TOTAL += 30;
                 break;
             default:
-                total += 40;
+                _TOTAL += 40;
                 break;
         }
 
-        bh.consume(total);
+        bh.consume(_TOTAL);
     }
 }

@@ -12,14 +12,16 @@ public class ControlForFlow {
     @Param({"0", "1", "3", "5", "10"})
     public int N;
 
+    private int _TOTAL = 0;
+
     @Benchmark
     public void exec(Blackhole bh) {
-        int total = 0;
-
+        
+        // for loop
         for (int i = 0; i < N; i++) {
-            total += i;
+            _TOTAL += i;
         }
 
-        bh.consume(total);
+        bh.consume(_TOTAL);
     }
 }

@@ -12,14 +12,16 @@ public class ControlIfFlow {
     @Param({"0", "1", "3", "5", "10"})
     public int N;
 
+    private int _TOTAL = 0;
+
     @Benchmark
     public void exec(Blackhole bh) {
-        int total = 0;
 
+        // if simple
         if (N == 0) {
-            total += 1;
+            _TOTAL += 1;
         }
 
-        bh.consume(total);
+        bh.consume(_TOTAL);
     }
 }
