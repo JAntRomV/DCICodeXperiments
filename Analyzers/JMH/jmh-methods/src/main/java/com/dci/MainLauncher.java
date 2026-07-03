@@ -10,14 +10,14 @@ import org.openjdk.jmh.runner.options.TimeValue;
 public class MainLauncher {
     private static final String[] MIN_CLASSES = {
             // "com.dci.min.AlphabetConcatenatorBenchmark",
-            "com.dci.min.ControlFlows",
-            "com.dci.min.ControlDoWhileFlow",
-            "com.dci.min.ControlForEachFlow",
-            "com.dci.min.ControlForFlow",
-            "com.dci.min.ControlIfElseFlow",
-            "com.dci.min.ControlIfFlow",
-            "com.dci.min.ControlSwitchFlow",
-            "com.dci.min.ControlWhileFlow",
+            // "com.dci.min.ControlFlows",
+            // "com.dci.min.ControlDoWhileFlow",
+            // "com.dci.min.ControlForEachFlow",
+            // "com.dci.min.ControlForFlow",
+            // "com.dci.min.ControlIfElseFlow",
+            // "com.dci.min.ControlIfFlow",
+            // "com.dci.min.ControlSwitchFlow",
+            // "com.dci.min.ControlWhileFlow",
             // "com.dci.min.DoWhileLoop",
             // "com.dci.min.ForEachLoop",
             // "com.dci.min.ForLoop",
@@ -26,6 +26,7 @@ public class MainLauncher {
             // "com.dci.min.SwitchStatement",
             // "com.dci.min.WhileLoop",
             // "com.dci.min.Program001"
+            "com.dci.min.v2.ControlFlows"
     };
 
     public static void main(String[] args) throws Exception {

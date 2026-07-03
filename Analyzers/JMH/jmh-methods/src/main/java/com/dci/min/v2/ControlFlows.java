@@ -1,5 +1,12 @@
 package com.dci.min.v2;
 
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.infra.Blackhole;
 import org.openjdk.jmh.annotations.Param;
@@ -10,77 +17,92 @@ import org.openjdk.jmh.annotations.Setup;
 @State(Scope.Benchmark)
 public class ControlFlows {
 
-    @Param({"0", "1", "3", "5", "10"})
+    @Param({"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"})
     public int N;
 
     private int[] _VALUES;
-    private int _TOTAL = 0;
+
+    private DateTimeFormatter FORMATTER = 
+                    DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS.AAAA.nnnnnnnnn");
+    private List<String[]> LOGS = new ArrayList<>();
+
+    private void logTime(String tag) {
+        long nanos = System.nanoTime();  // tiempo de alta resolución
+        Instant instant = Instant.now(); // tiempo de reloj real
+
+        LocalDateTime fechaHora = LocalDateTime.ofInstant(instant, ZoneId.systemDefault());
+
+        LOGS.add(new String[]{String.valueOf(N),
+                ControlFlows.class.getSimpleName(),
+                tag,
+                String.valueOf(nanos),
+                fechaHora.format(FORMATTER)});
+    }
+
 
     @Setup
     public void setupValues() {
+        // Initialize the _VALUES array with values from 0 to N
         _VALUES = new int[N];
-        for (int i = 0; i < N; i++) {
-            _VALUES[i] = i + 1;
+        for (int i = 0; i <= N; i++) {
+            _VALUES[i] = i;
         }
+
+        // Initialize the LOGS list with headers
+        LOGS.add(new String[]{"Param","Class", "Tag", "Nanos", "DateTime"});
     }
 
     @Benchmark
     public void exec(Blackhole bh) {
 
-        // if simple
-        if (N == 0) {
-            _TOTAL += 1;
+        // IF
+        if ((N % 2) == 0) {
+            //CODE
         }
 
-        // if-else
-        if (N % 2 == 0) {
-            _TOTAL += 2;
-        } else {
-            _TOTAL += 3;
+        //IF ELSE
+        if((N % 2) == 0){
+            //CODE
+        }else{
+            //CODE
         }
 
-        // for loop
-        for (int i = 0; i < N; i++) {
-            _TOTAL += i;
+        //FOR
+        for(int i=0; i<N; i++){
+            //CODE
         }
 
-        // while loop
+        //FOR EACH
+        for(int i : _VALUES){
+            //CODE
+        }
+
+        //WHILE
         int j = 0;
-        while (j < N) {
-            _TOTAL += j * 2;
+        while(j<=N){
+            //CODE
             j++;
         }
 
-        // do-while loop
+        //DO WHILE
         int k = 0;
-        if (N > 0) {
-            do {
-                _TOTAL += k * 3;
-                k++;
-            } while (k < N);
-        }
+        do{
+            //CODE
+            k++;                
+        }while(k<=N);
 
-        // foreach loop
-        for (int value : _VALUES) {
-            _TOTAL += value;
-        }
-
-        // switch statement
-        switch (N % 4) {
+        //SWITCH
+        switch(N%2){
             case 0:
-                _TOTAL += 10;
+                //CODE
                 break;
             case 1:
-                _TOTAL += 20;
-                break;
-            case 2:
-                _TOTAL += 30;
+                //CODE
                 break;
             default:
-                _TOTAL += 40;
-                break;
+                //CODE
         }
 
-        bh.consume(_TOTAL);
+        bh.consume(k);
     }
 }
