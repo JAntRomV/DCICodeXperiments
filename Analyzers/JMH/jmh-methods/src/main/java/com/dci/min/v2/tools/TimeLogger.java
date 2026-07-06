@@ -1,4 +1,4 @@
-package Code.Java.Minimalist.v2;
+package com.dci.min.v2.tools;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -10,10 +10,6 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.time.Duration;
-import java.util.Arrays;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-import java.util.stream.IntStream;
 
 public class TimeLogger {
     
@@ -21,8 +17,13 @@ public class TimeLogger {
     private final List<String[]> LOGS = new ArrayList<>();
     private NanoTimeLogger _prevTimes = new NanoTimeLogger(System.nanoTime(), LocalDateTime.ofInstant(Instant.now(), ZoneId.systemDefault()));
 
-    public TimeLogger() {
-        LOGS.add(new String[]{"Clase", "Etiqueta", "TiempoNanos", "FechaHora", "DuracionNanos","DuracionNanosTime"});
+    private String className;
+    private int paramN;
+
+    public TimeLogger(String className, int paramN) {
+        this.className = className;
+        this.paramN = paramN;
+        LOGS.add(new String[]{"Clase", "ParamN" ,"Etiqueta", "TiempoNanos", "FechaHora", "DuracionNanos","DuracionNanosTime"});
     }
 
     public void logTime(String etiqueta) {
@@ -34,7 +35,8 @@ public class TimeLogger {
         Duration duration = Duration.between(_prevTimes.getPrevFechaHora(), fechaHora);
         long durationNanosTime = duration.toNanos();
 
-        LOGS.add(new String[]{ControlFlowIf.class.getSimpleName(),
+        LOGS.add(new String[]{this.className,
+                String.valueOf(this.paramN),
                 etiqueta,
                 String.valueOf(nanos),
                 fechaHora.format(FORMATTER),
@@ -45,7 +47,7 @@ public class TimeLogger {
         _prevTimes.setPrevFechaHora(fechaHora);
     }
 
-    public void escribirCsv(String rutaArchivo) {
+    public void toCSV(String rutaArchivo) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(rutaArchivo))) {
             for (String[] fila : LOGS) {
                 writer.write(String.join(",", fila));
