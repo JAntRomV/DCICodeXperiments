@@ -33,7 +33,9 @@ public class ControlFlows {
 
     @TearDown
     public void tearDown() {
-        _timeLogger.toCSV("ControlFlows_" + N + ".csv");
+        String resultsDirectory = System.getProperty("results.directory", "");
+        String resultsCSV = resultsDirectory + "/" + this.getClass().getSimpleName() + "_" + N + ".csv";
+        _timeLogger.toCSV(resultsCSV);
     }
 
     @Benchmark
