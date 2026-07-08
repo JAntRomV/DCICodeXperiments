@@ -69,10 +69,7 @@ public class MainLauncher {
         int minHeap,
         int maxHeap) throws Exception {
 
-        // Dynamically load the class and create an instance
-        Class<?> clazz = Class.forName(className);
-        Object instance = clazz.getDeclaredConstructor().newInstance();
-        String instanceName = instance.getClass().getSimpleName();
+        String instanceName = createBenchmarkInstanceName(className);
 
         // Create a results directory based on the number of iterations and the instance name
         String parentDirectory = String.format("IT%dMI%dFR%dWI%d", iterations, measurementIterations, forks, warmupIterations);
@@ -102,6 +99,12 @@ public class MainLauncher {
 
             new Runner(opt).run();
         }
+    }
+
+    private static String createBenchmarkInstanceName(String className) throws Exception {
+        Class<?> clazz = Class.forName(className);
+        Object instance = clazz.getDeclaredConstructor().newInstance();
+        return instance.getClass().getSimpleName();
     }
 
     private static boolean CreateResultsDirectory(String pathresults) {
