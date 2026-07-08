@@ -118,7 +118,7 @@ $ java -jar target/benchmarks.jar --I:100 --WI:10 --F:4 --MINH:4096 --MAXH:4096
 | --MINH:4096 | Min heap size (MB) |
 | --MAXH:4096 | Max heap size (MB) |
 
-This will return a set of csv files with JMH results and nanoseconds time executions per method and parameter number
+This will return a set of csv files with JMH results and nanoseconds time executions per method and parameter number.
 
 ## Profiling
 
