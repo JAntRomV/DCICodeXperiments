@@ -63,6 +63,8 @@ java -jar ck-0.7.1-SNAPSHOT-jar-with-dependencies.jar \
 
 ## JMH (Java Microbenchmark Harness)
 
+### Class level
+
 Create jmh test project
 ```
 $ mvn archetype:generate \
@@ -94,6 +96,29 @@ Optional
 ```
 java -jar target/benchmarks.jar -rf csv -rff results.csv
 ```
+
+### Method level
+
+Build project
+```
+$ cd Analyzers/JMH/jmh-methods
+$ mvn clean verify
+```
+
+Run JMH benchmark
+```
+$ java -jar target/benchmarks.jar --I:100 --WI:10 --F:4 --MINH:4096 --MAXH:4096
+```
+
+| Argument | Description |
+| ----------- | ----------- |
+| --I:100 | Iteration total number for experiments |
+| --WI:10 | Warmup iterations number|  
+| --F:4 | Forks number |
+| --MINH:4096 | Min heap size (MB) |
+| --MAXH:4096 | Max heap size (MB) |
+
+This will return a set of csv files with JMH results and nanoseconds time executions per method and parameter number
 
 ## Profiling
 
