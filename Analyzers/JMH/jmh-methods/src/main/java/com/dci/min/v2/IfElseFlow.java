@@ -5,10 +5,7 @@ import org.openjdk.jmh.annotations.Param;
 import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.Setup;
 import org.openjdk.jmh.annotations.State;
-import org.openjdk.jmh.annotations.TearDown;
 import org.openjdk.jmh.infra.Blackhole;
-
-import com.dci.min.v2.tools.TimeLogger;
 
 @State(Scope.Benchmark)
 public class IfElseFlow {
@@ -18,35 +15,18 @@ public class IfElseFlow {
 
     private int[] _VALUES;
 
-    private TimeLogger _timeLogger;
-
     @Setup
     public void setupValues() {
         _VALUES = new int[N];
         for (int i = 0; i < N; i++) {
             _VALUES[i] = i;
         }
-
-        _timeLogger = new TimeLogger(this.getClass().getSimpleName(), N);
-    }
-
-    @TearDown
-    public void tearDown() {
-        String resultsDirectory = System.getProperty("results.directory", "");
-        String resultsCSV = resultsDirectory + "/" + this.getClass().getSimpleName() + "_" + N + ".csv";
-        _timeLogger.toCSV(resultsCSV);
     }
 
     @Benchmark
     public void exec(Blackhole bh) {
-        _timeLogger.logTime("IFELSE-S");
         if ((N % 2) == 0) {
-            _timeLogger.logTime("IFELSE-T");
         } else {
-            _timeLogger.logTime("IFELSE-F");
         }
-        _timeLogger.logTime("IFELSE-F");
-
-        bh.consume(_timeLogger);
     }
 }
