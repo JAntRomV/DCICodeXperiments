@@ -8,13 +8,13 @@ public class MainLauncher {
     private static final String[] MIN_CLASSES = {
             "com.dci.min.v2.ControlFlows",
             "com.dci.min.v2.ControlFlowsSeparated",
-            "com.dci.min.v2.IfFlow",
-            "com.dci.min.v2.IfElseFlow",
-            "com.dci.min.v2.ForFlow",
-            "com.dci.min.v2.ForEachFlow",
-            "com.dci.min.v2.WhileFlow",
-            "com.dci.min.v2.DoWhileFlow",
-            "com.dci.min.v2.SwitchFlow"
+            // "com.dci.min.v2.IfFlow",
+            // "com.dci.min.v2.IfElseFlow",
+            // "com.dci.min.v2.ForFlow",
+            // "com.dci.min.v2.ForEachFlow",
+            // "com.dci.min.v2.WhileFlow",
+            // "com.dci.min.v2.DoWhileFlow",
+            // "com.dci.min.v2.SwitchFlow"
     };
 
     public static void main(String[] args) throws Exception {

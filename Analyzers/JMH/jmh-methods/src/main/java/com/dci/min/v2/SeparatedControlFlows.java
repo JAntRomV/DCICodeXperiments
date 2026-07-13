@@ -8,7 +8,7 @@ import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.infra.Blackhole;
 
 @State(Scope.Benchmark)
-public class ControlFlowsSeparated {
+public class SeparatedControlFlows {
 
     @Param({"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"})
     public int N;
