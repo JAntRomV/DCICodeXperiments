@@ -8,16 +8,17 @@ import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.TearDown;
 import org.openjdk.jmh.annotations.Setup;
 import com.dci.min.v2.tools.TimeLogger;
+import org.openjdk.jmh.annotations.Level;
 
-@State(Scope.Thread)
+@State(Scope.Benchmark)
 public class ControlFlows {
 
     @Param({"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"})
     public int N;
 
     private int[] _VALUES;
-
     private TimeLogger _timeLogger;
+    private String _resultsDirectory;
 
     @Setup
     public void setupValues() {
@@ -26,15 +27,14 @@ public class ControlFlows {
         for (int i = 0; i < N; i++) {
             _VALUES[i] = i;
         }
-
+        _resultsDirectory = System.getProperty("results.directory", "");
         //Set values logger for each benchmark execution
         _timeLogger = new TimeLogger(this.getClass().getSimpleName(), N);
     }
 
-    @TearDown
+    @TearDown(Level.Invocation)
     public void tearDown() {
-        String resultsDirectory = System.getProperty("results.directory", "");
-        String resultsCSV = resultsDirectory + "/" + this.getClass().getSimpleName() + "_" + N + ".csv";
+        String resultsCSV = _resultsDirectory + "/" + this.getClass().getSimpleName() + "_" + N + ".csv";
         _timeLogger.toCSV(resultsCSV);
     }
 

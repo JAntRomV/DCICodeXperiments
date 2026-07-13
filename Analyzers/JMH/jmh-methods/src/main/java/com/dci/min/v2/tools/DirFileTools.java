@@ -27,18 +27,17 @@ public class DirFileTools {
         return instance.getClass().getSimpleName();
     }
 
-    public static String CreateResultsDirectory(String instanceName,
-        int iterations,
+    public static String CreateResultsDirectory(int iterations,
         int measurementIterations,
         int forks,
         int warmupIterations) {
 
         String parentDirectory = String.format("IT%dMI%dFR%dWI%d", iterations, measurementIterations, forks, warmupIterations);
-        String resultsDirectory = parentDirectory + "/" + instanceName;
+        // String resultsDirectory = parentDirectory + "/" + instanceName;
 
         try {
-            Files.createDirectories(Paths.get(resultsDirectory));
-            return resultsDirectory;
+            Files.createDirectories(Paths.get(parentDirectory));
+            return parentDirectory;
         } catch (Exception e) {
             System.err.println("Error creating results directory: " + e.getMessage());
             return null;

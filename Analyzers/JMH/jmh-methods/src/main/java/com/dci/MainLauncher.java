@@ -28,9 +28,11 @@ public class MainLauncher {
         int MaxHeap = Integer.parseInt(params.getOrDefault("MAXH", "4096"));        //Max heap en MB
         int measurementIterations = Iterations / Forks;                             //Calculate measurement iterations per fork
 
-        for (String className : MIN_CLASSES) {
-            System.out.println("Running benchmark for: " + className);
-            JMHRunner.runBenchmark(className, Iterations, measurementIterations, WarmupIterations, Forks, MinHeap, MaxHeap);
-        }
+        // System.out.println("Running benchmark for: " + className);
+        JMHRunner.runBenchmark(Iterations, measurementIterations, WarmupIterations, Forks, MinHeap, MaxHeap, MIN_CLASSES);
+
+        // for (String className : MIN_CLASSES) {
+            
+        // }
     }
 }
