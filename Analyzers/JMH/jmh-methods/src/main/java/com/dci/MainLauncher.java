@@ -7,7 +7,7 @@ import java.util.Map;
 public class MainLauncher {
     private static final String[] MIN_CLASSES = {
             "com.dci.min.v2.ControlFlows",
-            "com.dci.min.v2.ControlFlowsSeparated",
+            "com.dci.min.v2.SeparatedControlFlows",
             // "com.dci.min.v2.IfFlow",
             // "com.dci.min.v2.IfElseFlow",
             // "com.dci.min.v2.ForFlow",
@@ -21,9 +21,9 @@ public class MainLauncher {
 
         Map<String, String> params = DirFileTools.getParams(args);
 
-        int Iterations = Integer.parseInt(params.getOrDefault("I", "100"));         //Default 100 iterations
-        int WarmupIterations = Integer.parseInt(params.getOrDefault("WI", "10"));   //Default 10 warmup iterations
-        int Forks = Integer.parseInt(params.getOrDefault("F", "4"));                //Default 4 forks
+        int Iterations = Integer.parseInt(params.getOrDefault("I", "1"));         //Default 100 iterations
+        int WarmupIterations = Integer.parseInt(params.getOrDefault("WI", "1"));   //Default 10 warmup iterations
+        int Forks = Integer.parseInt(params.getOrDefault("F", "1"));                //Default 4 forks
         int MinHeap = Integer.parseInt(params.getOrDefault("MINH", "4096"));        //Min heap en MB
         int MaxHeap = Integer.parseInt(params.getOrDefault("MAXH", "4096"));        //Max heap en MB
         int measurementIterations = Iterations / Forks;                             //Calculate measurement iterations per fork

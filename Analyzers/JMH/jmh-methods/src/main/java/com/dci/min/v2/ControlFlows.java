@@ -5,15 +5,19 @@ import org.openjdk.jmh.infra.Blackhole;
 import org.openjdk.jmh.annotations.Param;
 import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.State;
+import org.openjdk.jmh.annotations.TearDown;
 import org.openjdk.jmh.annotations.Setup;
+import com.dci.min.v2.tools.TimeLogger;
 
-@State(Scope.Benchmark)
+@State(Scope.Thread)
 public class ControlFlows {
 
     @Param({"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"})
     public int N;
 
     private int[] _VALUES;
+
+    private TimeLogger _timeLogger;
 
     @Setup
     public void setupValues() {
@@ -22,40 +26,87 @@ public class ControlFlows {
         for (int i = 0; i < N; i++) {
             _VALUES[i] = i;
         }
+
+        //Set values logger for each benchmark execution
+        _timeLogger = new TimeLogger(this.getClass().getSimpleName(), N);
+    }
+
+    @TearDown
+    public void tearDown() {
+        String resultsDirectory = System.getProperty("results.directory", "");
+        String resultsCSV = resultsDirectory + "/" + this.getClass().getSimpleName() + "_" + N + ".csv";
+        _timeLogger.toCSV(resultsCSV);
     }
 
     @Benchmark
     public void exec(Blackhole bh) {
 
         // IF
-        if ((N % 2) == 0) {}
+        _timeLogger.logTime("IF-START");
+        if ((N % 2) == 0) {
+            _timeLogger.logTime("IF-TRUE");
+        }
+        _timeLogger.logTime("IF-END");
 
         //IF ELSE
-        if((N % 2) == 0){}else{}
+        _timeLogger.logTime("IFELSE-START");
+        if((N % 2) == 0){
+            _timeLogger.logTime("IFELSE-TRUE");
+        }else{
+            _timeLogger.logTime("IFELSE-FALSE");
+        }
+        _timeLogger.logTime("IFELSE-END");
 
         //FOR
-        for(int i=0; i<N; i++){}
+        _timeLogger.logTime("FOR-START");
+        for(int i=0; i<N; i++){
+            _timeLogger.logTime("FOR-ITERATION:" + i);
+        }
+        _timeLogger.logTime("FOR-END");
 
         //FOR EACH
-        for(int i : _VALUES){}
+        _timeLogger.logTime("FOREACH-START");
+        for(int i : _VALUES){
+             _timeLogger.logTime("FOREACH-ITERATION:" + i);
+        }
+        _timeLogger.logTime("FOREACH-END");
 
         //WHILE
+        _timeLogger.logTime("WHILE-START");
         int j = 0;
-        while(j<=N){j++;}
+        _timeLogger.logTime("WHILE-VAR");
+        while(j<=N){
+            _timeLogger.logTime("WHILE-J:"+j);
+            j++;
+            _timeLogger.logTime("WHILE-J++:"+j);
+        }
+        _timeLogger.logTime("WHILE-END");
 
         //DO WHILE
+        _timeLogger.logTime("DOWHILE-START");
         int k = 0;
+        _timeLogger.logTime("DOWHILE-VAR");
         do{
+            _timeLogger.logTime("DOWHILE-K:"+k);
             k++;                
+            _timeLogger.logTime("DOWHILE-K++:"+k);
         }while(k<=N);
+        _timeLogger.logTime("DOWHILE-END");
 
         //SWITCH
+        _timeLogger.logTime("SWITCH-START");
         switch(N%2){
             case 0:
+                _timeLogger.logTime("SWITCH-0");
                 break;
             case 1:
+               _timeLogger.logTime("SWITCH-1");
                 break;
             default:
+                _timeLogger.logTime("SWITCH-DEFAULT");
         }
+        _timeLogger.logTime("SWITCH-END");
+
+        bh.consume(_timeLogger);
     }
 }
