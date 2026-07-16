@@ -34,14 +34,7 @@ public final class MultiClassBenchmarkRunner {
     // Lista de clases de benchmark a ejecutar. Deben tener métodos @Benchmark.
     private static final List<String> TARGET_CLASSES = List.of(
             "com.dci.benchmark.min.ControlFlows",
-            "com.dci.benchmark.min.SeparatedControlFlows",
-            "com.dci.benchmark.min.IfFlow",
-            "com.dci.benchmark.min.IfElseFlow",
-            "com.dci.benchmark.min.ForFlow",
-            "com.dci.benchmark.min.ForEachFlow",
-            "com.dci.benchmark.min.WhileFlow",
-            "com.dci.benchmark.min.DoWhileFlow",
-            "com.dci.benchmark.min.SwitchFlow"
+            "com.dci.benchmark.min.SeparatedControlFlows"
     );
 
     public static void main(String[] args) throws Exception {
