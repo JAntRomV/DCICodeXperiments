@@ -107,16 +107,18 @@ $ mvn clean verify
 
 Run JMH benchmark
 ```
-$ java -jar target/benchmarks.jar --I:100 --WI:10 --F:4 --MINH:4096 --MAXH:4096
+$ java -jar target/benchmarks.jar --I:100 --WI:10 --F:4 --MINH:4096 --MAXH:4096 --JMHMODE:SAMT --THREADS=1
 ```
 
-| Argument | Description |
-| ----------- | ----------- |
-| --I:100 | Iteration total number for experiments |
-| --WI:10 | Warmup iterations number|  
-| --F:4 | Forks number |
-| --MINH:4096 | Min heap size (MB) |
-| --MAXH:4096 | Max heap size (MB) |
+| Argument | Description | Default |
+| ----------- | ----------- | ----------- |
+| --I | Total number of iterations for experiments | 1 |
+| --WI | Warmup iterations number| 1 |
+| --F | Forks number | 1 |
+| --MINH | Min heap size (MB) | 4096 |
+| --MAXH | Max heap size (MB) | 4096 |
+| --JMHMODE | JMH Benchmark mode (AVGT=AverageTime, THRPT=Throughput, SAMT=SampleTime, SS=SingleShotTime, ALL) | SAMT |
+| --THREADS | Threads number | 1 |
 
 This will return a set of csv files with JMH results and nanoseconds time executions per method and parameter number.
 

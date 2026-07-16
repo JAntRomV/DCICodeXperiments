@@ -4,11 +4,9 @@ import org.openjdk.jmh.runner.Runner;
 import org.openjdk.jmh.runner.options.Options;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
 import org.openjdk.jmh.results.format.ResultFormatType;
-
-import java.util.List;
-
 import org.openjdk.jmh.profile.GCProfiler;
 import org.openjdk.jmh.runner.options.TimeValue;
+import org.openjdk.jmh.annotations.Mode;
 
 public class JMHRunner {
 
@@ -18,14 +16,15 @@ public class JMHRunner {
         int forks,
         int minHeap,
         int maxHeap,
-        String[] targerClasses) throws Exception {
+        String[] targerClasses,
+        String JMHMode,
+        int nThreads) throws Exception {
 
         String Xms = String.format("-Xms%dm", minHeap);
         String Xmx = String.format("-Xmx%dm", maxHeap);
+        Mode mode = ModeMapper.fromParam(JMHMode);
 
-        // String instanceName = DirFileTools.createBenchmarkInstanceName(className);
         String resultsDirectory = DirFileTools.CreateResultsDirectory(iterations, measurementIterations, forks, warmupIterations);
-        // String resultsJMHCSV = String.format("%s/%s_JMH.csv", resultsDirectory, instanceName);
         String resultsJMHCSV = String.format("%s/results_JMH.csv", resultsDirectory);
         String argResultsDirectory = "-Dresults.directory=" + resultsDirectory; 
 
@@ -47,8 +46,8 @@ public class JMHRunner {
             .measurementIterations(measurementIterations)
             .measurementTime(TimeValue.milliseconds(500))
             .forks(forks)
-            .threads(1)
-            .mode(org.openjdk.jmh.annotations.Mode.SampleTime)
+            .threads(nThreads)
+            .mode(mode)
             .timeUnit(java.util.concurrent.TimeUnit.NANOSECONDS)
             .build();
         new Runner(opt).run();

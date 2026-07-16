@@ -21,18 +21,15 @@ public class MainLauncher {
 
         Map<String, String> params = DirFileTools.getParams(args);
 
-        int Iterations = Integer.parseInt(params.getOrDefault("I", "1"));         //Default 100 iterations
-        int WarmupIterations = Integer.parseInt(params.getOrDefault("WI", "1"));   //Default 10 warmup iterations
+        int Iterations = Integer.parseInt(params.getOrDefault("I", "1"));           //Default 100 iterations
+        int WarmupIterations = Integer.parseInt(params.getOrDefault("WI", "1"));    //Default 10 warmup iterations
         int Forks = Integer.parseInt(params.getOrDefault("F", "1"));                //Default 4 forks
         int MinHeap = Integer.parseInt(params.getOrDefault("MINH", "4096"));        //Min heap en MB
         int MaxHeap = Integer.parseInt(params.getOrDefault("MAXH", "4096"));        //Max heap en MB
+        String JMHMode = params.getOrDefault("JMHMODE", "SAMT");                    //Default JMH mode enabled
+        int nThreads = Integer.parseInt(params.getOrDefault("THREADS", "1"));       //Default 1 thread
         int measurementIterations = Iterations / Forks;                             //Calculate measurement iterations per fork
 
-        // System.out.println("Running benchmark for: " + className);
-        JMHRunner.runBenchmark(Iterations, measurementIterations, WarmupIterations, Forks, MinHeap, MaxHeap, MIN_CLASSES);
-
-        // for (String className : MIN_CLASSES) {
-            
-        // }
+        JMHRunner.runBenchmark(Iterations, measurementIterations, WarmupIterations, Forks, MinHeap, MaxHeap, MIN_CLASSES, JMHMode, nThreads);
     }
 }
