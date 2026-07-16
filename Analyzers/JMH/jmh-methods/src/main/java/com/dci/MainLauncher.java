@@ -7,7 +7,7 @@ import java.util.Map;
 public class MainLauncher {
     private static final String[] MIN_CLASSES = {
             "com.dci.min.v2.ControlFlows",
-            "com.dci.min.v2.SeparatedControlFlows",
+            // "com.dci.min.v2.SeparatedControlFlows",
             // "com.dci.min.v2.IfFlow",
             // "com.dci.min.v2.IfElseFlow",
             // "com.dci.min.v2.ForFlow",

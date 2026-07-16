@@ -32,12 +32,11 @@ public class DirFileTools {
         int forks,
         int warmupIterations) {
 
-        String parentDirectory = String.format("IT%dMI%dFR%dWI%d", iterations, measurementIterations, forks, warmupIterations);
-        // String resultsDirectory = parentDirectory + "/" + instanceName;
+        String resultsDirectory = String.format("results/IT%dMI%dFR%dWI%d", iterations, measurementIterations, forks, warmupIterations);
 
         try {
-            Files.createDirectories(Paths.get(parentDirectory));
-            return parentDirectory;
+            Files.createDirectories(Paths.get(resultsDirectory));
+            return resultsDirectory;
         } catch (Exception e) {
             System.err.println("Error creating results directory: " + e.getMessage());
             return null;

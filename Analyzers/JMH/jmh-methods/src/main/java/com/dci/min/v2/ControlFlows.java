@@ -2,6 +2,8 @@ package com.dci.min.v2;
 
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.infra.Blackhole;
+import org.openjdk.jmh.infra.IterationParams;
+import org.openjdk.jmh.runner.IterationType;
 import org.openjdk.jmh.annotations.Param;
 import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.State;
@@ -17,19 +19,27 @@ public class ControlFlows {
     public int N;
 
     private int[] _VALUES;
-    private TimeLogger _timeLogger;
+    private TimeLogger _timeLogger = new TimeLogger();
     private String _resultsDirectory;
 
-    @Setup
-    public void setupValues() {
+    @Setup(Level.Iteration)
+    public void setupValues(IterationParams params) {
         // Initialize the _VALUES array with values from 0 to N
         _VALUES = new int[N];
         for (int i = 0; i < N; i++) {
             _VALUES[i] = i;
         }
+        
         _resultsDirectory = System.getProperty("results.directory", "");
+
         //Set values logger for each benchmark execution
-        _timeLogger = new TimeLogger(this.getClass().getSimpleName(), N);
+        boolean isWarmup = params.getType() == IterationType.WARMUP;
+        if(!isWarmup){
+            _timeLogger = new TimeLogger(this.getClass().getSimpleName(), N);
+        }
+        else{
+            System.out.println("Warmup iteration, skipping TimeLogger initialization.");
+        }
     }
 
     @TearDown(Level.Invocation)
@@ -40,9 +50,8 @@ public class ControlFlows {
 
     @Benchmark
     public void exec(Blackhole bh) {
-
         // IF
-        _timeLogger.logTime("IF-START");
+        _timeLogger.logTime("IF-START", true);
         if ((N % 2) == 0) {
             _timeLogger.logTime("IF-TRUE");
         }
