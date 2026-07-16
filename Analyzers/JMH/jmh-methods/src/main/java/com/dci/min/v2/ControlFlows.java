@@ -24,28 +24,16 @@ public class ControlFlows {
 
     @Setup(Level.Iteration)
     public void setupValues(IterationParams params) {
-        // Initialize the _VALUES array with values from 0 to N
-        _VALUES = new int[N];
-        for (int i = 0; i < N; i++) {
-            _VALUES[i] = i;
-        }
+        initVALUES();
         
         _resultsDirectory = System.getProperty("results.directory", "");
 
-        //Set values logger for each benchmark execution
-        boolean isWarmup = params.getType() == IterationType.WARMUP;
-        if(!isWarmup){
-            _timeLogger = new TimeLogger(this.getClass().getSimpleName(), N);
-        }
-        else{
-            System.out.println("Warmup iteration, skipping TimeLogger initialization.");
-        }
+        getIsWarmup(params);
     }
 
     @TearDown(Level.Invocation)
     public void tearDown() {
-        String resultsCSV = _resultsDirectory + "/" + this.getClass().getSimpleName() + "_" + N + ".csv";
-        _timeLogger.toCSV(resultsCSV);
+        _timeLogger.toCSV(String.format("%s/%s_%d.csv", _resultsDirectory, this.getClass().getSimpleName(), N));
     }
 
     @Benchmark
@@ -117,5 +105,24 @@ public class ControlFlows {
         _timeLogger.logTime("SWITCH-END");
 
         bh.consume(_timeLogger);
+    }
+
+    private void getIsWarmup(IterationParams params) {
+        //Set values logger for each benchmark execution
+        boolean isWarmup = params.getType() == IterationType.WARMUP;
+        if(!isWarmup){
+            _timeLogger = new TimeLogger(this.getClass().getSimpleName(), N);
+        }
+        else{
+            System.out.println("Warmup iteration, skipping TimeLogger initialization.");
+        }
+    }
+
+    private void initVALUES() {
+        // Initialize the _VALUES array with values from 0 to N
+        _VALUES = new int[N];
+        for (int i = 0; i < N; i++) {
+            _VALUES[i] = i;
+        }
     }
 }
