@@ -1,4 +1,4 @@
-package com.dci.min.v2;
+package com.dci.min.v2.notimer;
 
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.Param;

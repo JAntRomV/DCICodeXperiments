@@ -6,15 +6,27 @@ import java.util.Map;
 
 public class MainLauncher {
     private static final String[] MIN_CLASSES = {
-            "com.dci.min.v2.ControlFlows",
-            "com.dci.min.v2.SeparatedControlFlows",
-            // "com.dci.min.v2.IfFlow",
-            // "com.dci.min.v2.IfElseFlow",
-            // "com.dci.min.v2.ForFlow",
-            // "com.dci.min.v2.ForEachFlow",
-            // "com.dci.min.v2.WhileFlow",
-            // "com.dci.min.v2.DoWhileFlow",
-            // "com.dci.min.v2.SwitchFlow"
+            "com.dci.min.v2.timer.ControlFlows",
+            "com.dci.min.v2.timer.SeparatedControlFlows",
+            "com.dci.min.v2.timer.IfFlow",
+            "com.dci.min.v2.timer.IfElseFlow",
+            "com.dci.min.v2.timer.ForFlow",
+            "com.dci.min.v2.timer.ForEachFlow",
+            "com.dci.min.v2.timer.WhileFlow",
+            "com.dci.min.v2.timer.DoWhileFlow",
+            "com.dci.min.v2.timer.SwitchFlow"
+    };
+
+    private static final String[] NOTIMER_CLASSES = {
+            "com.dci.min.v2.notimer.ControlFlows",
+            "com.dci.min.v2.notimer.SeparatedControlFlows",
+            // "com.dci.min.v2.notimer.IfFlow",
+            // "com.dci.min.v2.notimer.IfElseFlow",
+            // "com.dci.min.v2.notimer.ForFlow",
+            // "com.dci.min.v2.notimer.ForEachFlow",
+            // "com.dci.min.v2.notimer.WhileFlow",
+            // "com.dci.min.v2.notimer.DoWhileFlow",
+            // "com.dci.min.v2.notimer.SwitchFlow"
     };
 
     public static void main(String[] args) throws Exception {
@@ -30,6 +42,14 @@ public class MainLauncher {
         int nThreads = Integer.parseInt(params.getOrDefault("THREADS", "1"));       //Default 1 thread
         int measurementIterations = Iterations / Forks;                             //Calculate measurement iterations per fork
 
-        JMHRunner.runBenchmark(Iterations, measurementIterations, WarmupIterations, Forks, MinHeap, MaxHeap, MIN_CLASSES, JMHMode, nThreads);
+        JMHRunner.runBenchmark(Iterations, 
+            measurementIterations, 
+            WarmupIterations, 
+            Forks, 
+            MinHeap, 
+            MaxHeap, 
+            NOTIMER_CLASSES, 
+            JMHMode, 
+            nThreads);
     }
 }

@@ -1,4 +1,4 @@
-package com.dci.min.v2;
+package com.dci.min.v2.timer;
 
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.Param;
@@ -8,7 +8,7 @@ import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.infra.Blackhole;
 
 @State(Scope.Benchmark)
-public class DoWhileFlow {
+public class SwitchFlow {
 
     @Param({"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"})
     public int N;
@@ -25,9 +25,12 @@ public class DoWhileFlow {
 
     @Benchmark
     public void exec(Blackhole bh) {
-        int k = 0;
-        do {
-            k++;
-        } while (k <= N);
+        switch (N % 2) {
+            case 0:
+                break;
+            case 1:
+                break;
+            default:
+        }
     }
 }

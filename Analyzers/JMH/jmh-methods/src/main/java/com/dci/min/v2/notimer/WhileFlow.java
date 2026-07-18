@@ -1,4 +1,4 @@
-package com.dci.min.v2;
+package com.dci.min.v2.notimer;
 
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.Param;
@@ -8,7 +8,7 @@ import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.infra.Blackhole;
 
 @State(Scope.Benchmark)
-public class IfFlow {
+public class WhileFlow {
 
     @Param({"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"})
     public int N;
@@ -25,7 +25,9 @@ public class IfFlow {
 
     @Benchmark
     public void exec(Blackhole bh) {
-        if ((N % 2) == 0) {
+        int j = 0;
+        while (j <= N) {
+            j++;
         }
     }
 }
